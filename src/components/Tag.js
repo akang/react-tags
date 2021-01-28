@@ -1,14 +1,7 @@
 import React, { Component } from 'react';
-import { DragSource, DropTarget } from 'react-dnd';
 import PropTypes from 'prop-types';
-import flow from 'lodash/flow';
 import ClassNames from 'classnames';
-import {
-  tagSource,
-  tagTarget,
-  dragSource,
-  dropCollect,
-} from './DragAndDropHelper';
+
 import { canDrag } from './utils';
 
 import RemoveComponent from './RemoveComponent';
@@ -20,7 +13,6 @@ class Tag extends Component {
     const { props } = this;
     const label = props.tag[props.labelField];
     const {
-      connectDragSource,
       isDragging,
       connectDropTarget,
       readOnly,
@@ -47,7 +39,7 @@ class Tag extends Component {
       />
     </span>
     );
-    return connectDragSource(connectDropTarget(tagComponent));
+    return (tagComponent);
   }
 }
 
@@ -64,9 +56,6 @@ Tag.propTypes = {
   onTagClicked: PropTypes.func,
   classNames: PropTypes.object,
   readOnly: PropTypes.bool,
-  connectDragSource: PropTypes.func.isRequired,
-  isDragging: PropTypes.bool.isRequired,
-  connectDropTarget: PropTypes.func.isRequired,
   index: PropTypes.number.isRequired,
 };
 
@@ -75,7 +64,4 @@ Tag.defaultProps = {
   readOnly: false,
 };
 
-export default flow(
-  DragSource(ItemTypes.TAG, tagSource, dragSource),
-  DropTarget(ItemTypes.TAG, tagTarget, dropCollect)
-)(Tag);
+export default (Tag);
