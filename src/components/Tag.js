@@ -24,7 +24,7 @@ class Tag extends Component {
     // eslint-disable-next-line
     const tagComponent = ( <span
       className={ClassNames('tag-wrapper', classNames.tag, className)}
-      style={{opacity: isDragging ? 0 : 1, 'cursor': canDrag(props) ? 'move' : 'auto'}}
+      style={{opacity: 1, 'cursor': 'auto'}}
       onClick={props.onTagClicked}
       onTouchStart={props.onTagClicked}>
       {label}
@@ -51,7 +51,6 @@ Tag.propTypes = {
     className: PropTypes.string,
     key: PropTypes.string,
   }),
-  moveTag: PropTypes.func,
   removeComponent: PropTypes.func,
   onTagClicked: PropTypes.func,
   classNames: PropTypes.object,

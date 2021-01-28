@@ -19,8 +19,6 @@ const config = {
   externals: {
     react: 'React',
     'react-dom': 'ReactDOM',
-    'react-dnd': 'ReactDnD',
-    'react-dnd-html5-backend': 'ReactDnDHTML5Backend',
   },
   plugins: [
     // Define production build to allow React to strip out unnecessary checks

@@ -37,7 +37,6 @@ class ReactTags extends Component {
     ]),
     handleDelete: PropTypes.func,
     handleAddition: PropTypes.func,
-    handleDrag: PropTypes.func,
     handleFilterSuggestions: PropTypes.func,
     handleTagClick: PropTypes.func,
     allowDeleteFromEmptyInput: PropTypes.bool,
@@ -110,7 +109,6 @@ class ReactTags extends Component {
     this.handleBlur = this.handleBlur.bind(this);
     this.handleKeyDown = this.handleKeyDown.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    this.moveTag = this.moveTag.bind(this);
     this.handlePaste = this.handlePaste.bind(this);
     this.handleSuggestionHover = this.handleSuggestionHover.bind(this);
     this.handleSuggestionClick = this.handleSuggestionClick.bind(this);
@@ -378,17 +376,6 @@ class ReactTags extends Component {
     });
   }
 
-  moveTag(dragIndex, hoverIndex) {
-    const tags = this.props.tags;
-
-    // locate tags
-    const dragTag = tags[dragIndex];
-
-    // call handler with the index of the dragged tag
-    // and the tag that is hovered
-    this.props.handleDrag(dragTag, dragIndex, hoverIndex);
-  }
-
   getTagItems = () => {
     const {
       classNames,
@@ -399,7 +386,6 @@ class ReactTags extends Component {
       allowDragDrop,
     } = this.props;
 
-    const moveTag = allowDragDrop ? this.moveTag : null;
     return tags.map((tag, index) => {
       return (
         <Tag
@@ -408,7 +394,6 @@ class ReactTags extends Component {
           tag={tag}
           labelField={labelField}
           onDelete={this.handleDelete.bind(this, index)}
-          moveTag={moveTag}
           removeComponent={removeComponent}
           onTagClicked={this.handleTagClick.bind(this, index)}
           readOnly={readOnly}
