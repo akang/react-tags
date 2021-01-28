@@ -9,6 +9,7 @@
   ],
   "sideEffects": false,
   "scripts": {
+    "prepare": "npm run build",
     "test": "jest --notify --coverage",
     "test:watch": "jest --watch --notify --coverage",
     "start": "webpack-dev-server --config webpack-dev-server.config.js --progress --inline --colors",
