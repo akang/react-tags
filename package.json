@@ -1,6 +1,6 @@
 {
   "name": "react-tag-input-no-dnd",
-  "version": "1.0",
+  "version": "1.0.0",
   "description": "React tags no Drap n Drop is a simple fork of react-tag-input without the dnd features",
   "main": "dist-modules/components/ReactTags.js",
   "files": [
