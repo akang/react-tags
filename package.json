@@ -1,7 +1,7 @@
 {
-  "name": "react-tag-input",
-  "version": "0.0.1-no-dnd",
-  "description": "React tags is a fantastically simple tagging component for your React projects",
+  "name": "react-tag-input-no-dnd",
+  "version": "1.0",
+  "description": "React tags no Drap n Drop is a simple fork of react-tag-input without the dnd features",
   "main": "dist-modules/components/ReactTags.js",
   "files": [
     "dist-modules",
@@ -21,15 +21,14 @@
   },
   "keywords": [
     "react",
-    "drag-drop",
     "tags",
     "tag input",
     "react-component",
     "autosuggest"
   ],
-  "author": "Prakhar Srivastav",
+  "author": "Allan Kenneth Ang",
   "license": "MIT",
-  "repository": "https://github.com/prakhar1989/react-tags",
+  "repository": "https://github.com/allkenang/react-tags",
   "peerDependencies": {
     "react": "^16.3.1"
   },
